@@ -1,0 +1,25 @@
+@import 'utils/all';
+@import 'templates';
+@import 'color-theme';
+@import 'components';
+@import 'typography';
+
+// *! First set the Fontawesome path
+$fa-font-path: '../assets/fontawesome';  
+
+// *? utils ** //
+@include hard-reset; // ** from reset
+//@include wrapper; // ** from mixins
+
+//  *? components ** //
+@include components;
+
+// *? page layout ** // 
+// ** templates ** //
+@include templates;
+
+// *? color Theme ** //
+@include colorTheme;
+
+// *? margins and typography ** //
+@include typography; // *! include margins and paddings...

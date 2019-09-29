@@ -1,0 +1,10 @@
+@mixin colorTheme {
+  body {
+    background-color:white;
+    header { background-color:#CF4647; }
+    nav { background-color: lightgreen;}
+    section { background-color: lightgreen;}
+    footer { background-color: lightsalmon;}
+    article { background-color: lightblue }
+  }
+}

@@ -1,0 +1,14 @@
+@mixin templates {
+   body {
+       height:100vh;
+       display:grid;
+       grid-template-areas:'header header header''nav article ads' 'footer footer footer';
+       grid-template-columns: 1fr 4fr 1fr;
+       grid-template-rows: 1fr 70vh 1fr;
+   }
+    @include setGridAreas(
+        (header:'header',nav:'nav',article:'article',section:'ads',footer:'footer')
+    );  
+    @include card;
+}
+

@@ -1,0 +1,47 @@
+@mixin slider {
+    height: 100%;
+    display:flex;
+    overflow-x:scroll;
+    overflow-y: hidden;
+    @content;
+    .slide {
+        position:relative;
+        height:100%;
+        .img{
+            object-fit: cover;
+            height:100%;
+            width:100vw;
+        }
+        .slide-content {
+            position:absolute;
+            top:20%;
+            left:50%;
+            transform:translateX(-50%);
+            color:white;
+            .title {font-size:3em;}
+        }
+    }
+}
+@mixin controls($leftCtrl:'<',$rightCtrl:'>') {
+    $control-size:3rem;
+    position:relative;
+    #left-ctrl,#right-ctrl{
+        position:absolute;
+        font-size:$control-size;
+        line-height:1em;
+        height:$control-size;
+        width:$control-size;
+        top:50%;
+        font-weight: bold;
+        z-index:1;
+        cursor:pointer;
+    }
+    #left-ctrl{
+        left:5%;
+        &:after{content:$leftCtrl;}
+    }
+    #right-ctrl{
+        right:5%;
+        &:after{content:$rightCtrl;}
+    }
+} 

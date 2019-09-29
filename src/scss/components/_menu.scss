@@ -1,0 +1,30 @@
+@mixin menu 
+{
+    list-style: none;
+    display:flex;
+    li {
+        position: relative;
+        transition:opacity .4s ease;
+        a { 
+            text-decoration: none;
+            padding: 0 1rem;
+            display: block;
+            line-height: 1em;
+            white-space: nowrap;
+            color:inherit;
+        }
+        &:hover {
+            opacity:.8;
+        }
+    }
+    @content;
+}
+@mixin menu-h { 
+    @include menu{ 
+        > li {
+            &:nth-child(1) > a { padding-left: 0;    }
+            &:last-child > a { padding-right: 0;   }
+        }
+        @content; 
+    }
+}

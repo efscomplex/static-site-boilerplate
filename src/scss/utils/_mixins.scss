@@ -1,0 +1,14 @@
+@mixin wrapper {
+    .wrapper{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        align-items:center; }
+}
+@mixin setGridAreas($map){
+    @each $selector,$area in $map{
+      #{$selector} {
+        grid-area:#{$area};  
+      }
+    }
+}

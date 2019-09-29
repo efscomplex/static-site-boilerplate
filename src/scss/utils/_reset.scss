@@ -1,0 +1,43 @@
+@mixin html { 
+    html {
+        display:flex; //avoid an overflow-x
+        ::-webkit-scrollbar { // scrollbars are ugly...
+            width: 0px;
+            background: transparent;
+            height:0;   }
+    }
+}
+@mixin body{
+    body{
+        margin:0;
+        width:100vw;
+        overflow-x:hidden;
+        ul{ 
+            list-style:none;
+            padding:0;  }
+        a {
+            color: inherit;
+            text-decoration: none;  }
+    }
+}
+@mixin box-sizing {
+    *, *:before,*:after{
+        box-sizing: border-box;
+    }
+}
+@mixin margin-off {
+    * { margin:0 }
+}
+@mixin padding-off{
+    *{ padding:0 }
+}
+@mixin reset {
+    @include html;
+    @include body;
+    @include box-sizing;
+}
+@mixin hard-reset {
+    @include reset;
+    @include margin-off;
+    @include padding-off;
+}

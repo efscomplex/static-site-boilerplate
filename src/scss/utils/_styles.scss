@@ -1,0 +1,23 @@
+.grid { 
+    display:grid; 
+    grid-auto-flow:column;
+}
+.img { 
+    max-width:100%; 
+    object-fit: cover;
+    object-position:center; }
+.img.fit {
+    height:100%;
+    width:100%; }
+
+.img.fit-h { 
+    height:100%;    }
+
+.img.fit-w { 
+    width:100%; }
+
+.wrapper{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center; }
