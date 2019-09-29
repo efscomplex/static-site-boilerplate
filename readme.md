@@ -1,8 +1,8 @@
 # by @efscomplex
-> This is a template for SPAs, *Single Page Applications*, using GulpJS
-
+> This is a template with structured directories using GulpJS
+> use live-server
 > Scripts:
-> - **npm run dev** - run gulp, create /dist folder and watch changes while you are developing your App.
-> - **npm run build** - run build, create /build folder and watch changes
-> - **npm run serve** - start live-server and serve /dist file (must install live-server)
-> - **npm run serve:build** - start live-server and serve /build folder
+"server": "live-server dist/",
+"server:build": "live-server build/",
+"build": "NODE_ENV=production gulp",
+"dev": "NODE_ENV=development gulp"
