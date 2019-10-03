@@ -17,10 +17,11 @@ const outDir = env == 'development' ?
 
 console.log(`you're running on ${env} mode`)
 const files = {
-    scssPath: ['src/scss/**/*.scss','!src/scss/**/_*.scss'],
-    jsPath: 'src/**/*.js',
-    imgPath:'src/assets/*',
-    pugPath:['src/**/*.pug','!src/**/_*.pug']
+    static:'src/assets/*',
+    scss: ['src/scss/**/*.scss','!src/scss/**/_*.scss'],
+    js: 'src/**/*.js',
+    img:'src/assets/img/*',
+    pug:['src/**/*.pug','!src/**/_*.pug']
 }
 function errorHandler (err) {
     notify.onError({
@@ -30,7 +31,7 @@ function errorHandler (err) {
 }
 
 async function sassCompilerTask(){
-    await src(files.scssPath,{sourcemaps:true})
+    await src(files.scss ,{sourcemaps:true})
             .pipe(plumber({errorHandler}))
             .pipe(sass({
                 outputStyle: 'expanded'
@@ -39,13 +40,13 @@ async function sassCompilerTask(){
     Promise.resolve(true)
 }
 async function imageOptimizatorTask(){
-    await src(files.imgPath)
+    await src(files.img )
         .pipe(imagemin())
-        .pipe(dest(outDir + 'assets'))
+        .pipe(dest(outDir + 'assets/img/'))
     Promise.resolve(true)
 }
 async function pugCompilerTask(){
-    await src(files.pugPath)
+    await src(files.pug )
             .pipe(
                 pug({pretty: env=='development'})
             ).pipe(
@@ -53,14 +54,19 @@ async function pugCompilerTask(){
             )
     Promise.resolve(true) 
 } 
+async function copyAssetsTask(){
+    await src(files.static)
+            .pipe(dest(outDir+ 'assets'))
+    Promise.resolve(true)
+}
 async function babelTranspilerTask(){
     if (env != 'development'){
-       await src(files.jsPath)
+       await src(files.js )
                 .pipe(concat('index.js'))
                 .pipe(minify())
                 .pipe(dest(outDir))
     }else{
-        await src(files.jsPath)
+        await src(files.js )
                 .pipe(babel())
                 .pipe(dest(outDir))
     }
@@ -68,11 +74,11 @@ async function babelTranspilerTask(){
 }
 function watchTask() {
     watch(
-        ['./src/scss/**/*.scss', files.jsPath,'./src/**/*.pug'],
+        ['./src/scss/**/*.scss', files.js ,'./src/**/*.pug',files.static],
         parallel(pugCompilerTask,sassCompilerTask, babelTranspilerTask)
     )
 }
-const defaultTask = series(parallel(pugCompilerTask,babelTranspilerTask, imageOptimizatorTask, sassCompilerTask), watchTask)
+const defaultTask = series(parallel(copyAssetsTask,pugCompilerTask,babelTranspilerTask, imageOptimizatorTask, sassCompilerTask), watchTask)
 
 module.exports = {
     imageOptimizatorTask,
