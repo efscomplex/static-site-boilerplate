@@ -1,6 +1,26 @@
 @mixin templates {
    body {
-       
+        min-height:100vh;
+        display:grid;
+        grid-template-areas: 'header header' 
+                            'main aside' 
+                            'footer footer';
+        grid-template-columns: 60vw 1fr;
+        grid-template-rows: 1fr minmax(70vh,auto) 1fr;
+        @include setGridAreas(
+            'header','main','aside','footer'
+        );  
+        .header { 
+            padding:1rem 5vw;
+            justify-content: space-between;
+            .logo { height:3rem;}
+        }
+        .main {
+            padding-top:3rem;
+        }
+        .field {
+            margin-bottom:1rem;
+        }
    }
 }
 

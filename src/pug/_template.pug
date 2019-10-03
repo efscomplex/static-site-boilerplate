@@ -9,15 +9,19 @@ html(lang="en")
         link(rel="stylesheet", href="/css/style.css")
         title= siteTitle
     body
-        header
-            block header
-        nav
-            block nav
-        article
-            block article
-        section
-            block ads
-        footer
+        header.header.wrapper
+            .wrapper
+                img.logo(src="/assets/img/user.svg" alt="@efscomplex")
+                h1.author= author
+            nav
+                +menu(routes).menu
+            i.fab.fa-facebook
+            input.search(placeholder="find articles")
+        main.main
+            block main
+        aside.aside
+            block aside
+        footer.footer
             block footer
         block scripts
             script(src="js/index.js")        

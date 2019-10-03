@@ -1,11 +1,13 @@
 @import 'utils/all';
-@import 'templates';
+@import 'layout';
 @import 'color-theme';
 @import 'components';
 @import 'typography';
+@import 'fontawesome.scss'; //*! import fontawesome if desired!
+
 
 // *! First set the Fontawesome path
-$fa-font-path: '../assets/fontawesome';  
+$fa-font-path: '../assets/fontawesome/';  
 
 // *? utils ** //
 @include hard-reset; // ** from reset
