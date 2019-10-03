@@ -45,3 +45,6 @@
         &:after{content:$rightCtrl;}
     }
 } 
+.slider {
+    @include slider;
+}

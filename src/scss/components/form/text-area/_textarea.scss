@@ -1,0 +1,25 @@
+@mixin textArea{
+    $txtArea-bd-c:#375A7F;
+    $txtArea-hov-bd-c:rgba(#375A7F,.4);
+    textarea{
+        width:100%;
+        padding: 0.375rem 0.75rem;
+        font-size: 0.9375rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #444;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid var(--txtArea-bd-c,#{$txtArea-bd-c});
+        transition:border .2s ease-in-out;
+        font-family:inherit;
+        &:focus {
+            outline:none;
+            border-color:var(--txtArea-hov-bd-c,#{$txtArea-hov-bd-c});
+        }
+        &:invalid {
+            box-shadow: none;
+            color: #a23231; }
+        @content;
+    }
+}

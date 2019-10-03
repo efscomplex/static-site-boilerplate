@@ -1,0 +1,10 @@
+@import 'inputs/input';
+@import 'text-area/textarea';
+
+@mixin form {
+    form {
+        @include input;
+        @include textArea;
+        @content;
+    }
+}

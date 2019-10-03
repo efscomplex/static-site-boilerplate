@@ -1,0 +1,19 @@
+input.search {
+    margin:0 1rem;
+    padding:.8rem 1.2rem;
+    border-radius:5px;
+    border:none;
+    background-color:white;
+    color:rgba(gray,.8); 
+    &:focus{
+        outline:none;
+    }
+    &:invalid {
+        box-shadow: none;
+        color: #a23231; }
+    &::placeholder {
+        color: inherit;
+        font-style:italic;
+        opacity:.7;
+    }
+}

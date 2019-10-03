@@ -1,0 +1,25 @@
+@mixin input{
+    label{ 
+        display:block;
+        margin-bottom:.4rem;    
+    }
+    input{
+        border-radius:4px;
+        border:1px solid rgba(gray,.8);
+        padding: 0.375rem 0.75rem;
+        font-size: 0.9375rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #444;
+        background-color: #fff;
+        background-clip: padding-box;
+        &:focus {
+            box-shadow: 0 0 0 0.2rem rgba(55, 90, 127, 0.25);
+            outline:none;
+        }
+        &:invalid {
+            box-shadow: none;
+            color: #a23231; }
+        @content;
+    }
+}
