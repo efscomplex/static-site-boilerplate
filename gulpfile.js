@@ -17,7 +17,7 @@ const outDir = env == 'development' ?
 
 console.log(`you're running on ${env} mode`)
 const files = {
-    static:'src/assets/*',
+    static:['src/assets/**/*','!src/assets/img/*'],
     scss: ['src/scss/**/*.scss','!src/scss/**/_*.scss'],
     js: 'src/**/*.js',
     img:'src/assets/img/*',
@@ -74,8 +74,8 @@ async function babelTranspilerTask(){
 }
 function watchTask() {
     watch(
-        ['./src/scss/**/*.scss', files.js ,'./src/**/*.pug',files.static],
-        parallel(pugCompilerTask,sassCompilerTask, babelTranspilerTask)
+        ['./src/scss/**/*.scss', files.js ,'./src/**/*.pug','./src/assets/**/*'],
+        parallel(copyAssetsTask,pugCompilerTask,sassCompilerTask, babelTranspilerTask)
     )
 }
 const defaultTask = series(parallel(copyAssetsTask,pugCompilerTask,babelTranspilerTask, imageOptimizatorTask, sassCompilerTask), watchTask)

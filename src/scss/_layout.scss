@@ -13,7 +13,8 @@
         .header { 
             padding:1rem 5vw;
             justify-content: space-between;
-            .logo { height:3rem;}
+            & > * { margin-right:1rem; }
+            .logo { height:3rem; }
         }
         .main {
             padding-top:3rem;

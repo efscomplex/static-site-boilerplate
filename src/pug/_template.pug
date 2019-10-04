@@ -1,5 +1,5 @@
 include ../_config
-include blocks/_menu
+include mixins/_menu
 <!DOCTYPE html>
 html(lang="en")
     head
@@ -15,7 +15,10 @@ html(lang="en")
                 h1.author= author
             nav
                 +menu(routes).menu
-            i.fab.fa-facebook
+            .social-bar
+                i.fab.fa-facebook
+                i.fab.fa-instagram
+                i.fab.fa-linkedin
             input.search(placeholder="find articles")
         main.main
             block main

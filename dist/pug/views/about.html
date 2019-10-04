@@ -8,22 +8,26 @@
     <title>Grid Templates</title>
   </head>
   <body>
-    <header>
-      <h1>Enjoy the great Templates</h1>
+    <header class="header wrapper">
+      <div class="wrapper"><img class="logo" src="/assets/img/user.svg" alt="@efscomplex"/>
+        <h1 class="author">@efscomplex</h1>
+      </div>
+      <nav>
+        <ul class="menu">
+          <li><a href="/pug/views/home.html">Home</a></li>
+          <li><a href="/pug/views/about.html">About Us</a></li>
+          <li><a href="/pug/views/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="social-bar"><i class="fab fa-facebook"></i><i class="fab fa-instagram"></i><i class="fab fa-linkedin"></i></div>
+      <input class="search" placeholder="find articles"/>
     </header>
-    <nav>
-      <ul>
-        <li><a href="/pug/views/home.html">Home</a></li>
-        <li><a href="/pug/views/about.html">About Us</a></li>
-        <li><a href="/pug/views/contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <article>
-      <h1>About</h1>
-    </article>
-    <section>
-    </section>
-    <footer>
+    <main class="main">
+      <h1>About page</h1>
+    </main>
+    <aside class="aside">
+    </aside>
+    <footer class="footer">
       <p>powered by @efscomplex</p>
     </footer>
     <script src="js/index.js">       </script>

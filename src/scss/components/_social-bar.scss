@@ -1,0 +1,7 @@
+@mixin socialBar {
+    font-size:2em;
+    & > *:not(:last-child) { margin-right:.6em; } 
+}
+.social-bar {
+    @include socialBar;
+}

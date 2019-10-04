@@ -1,8 +1,0 @@
-mixin menu(items)
-    if !items 
-        return
-    ul&attributes(attributes)
-        each item in items
-            if item.children 
-                +menu(item.children)
-            li: a(href=item.path) #{item.label}

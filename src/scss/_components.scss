@@ -1,12 +1,5 @@
 @import 'components/all';
 
 @mixin components{
-    body{
-        > header {
-            nav ul.menu { 
-                @include menu-h; 
-            }
-        }
-
-    }
+   
 }

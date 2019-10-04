@@ -1,4 +1,4 @@
-input.search {
+@mixin search {
     margin:0 1rem;
     padding:.8rem 1.2rem;
     border-radius:5px;
@@ -16,4 +16,8 @@ input.search {
         font-style:italic;
         opacity:.7;
     }
+    @content;
+}
+input.search {
+    @include search;
 }

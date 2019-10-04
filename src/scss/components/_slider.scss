@@ -48,3 +48,6 @@
 .slider {
     @include slider;
 }
+.slider-controls {
+    @include controls;
+}

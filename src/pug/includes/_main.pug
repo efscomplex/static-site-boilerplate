@@ -1,25 +1,14 @@
-include articles/_articles
 .articles#articles
-    each article in articles
-        article.card
-            p
-                time(datetime=article.hrfDate)= article.date
-            h1= article.title
+    article.card
+        h1 Cuando te alejas de toda filosofia de vida
+        .main-content
+            p.main-text Para los soñadores que se olvidan de lo que tienen delante, esos que atestiguan una vida falsa repleta de experiencias sin sentido... Hay algo tan sutil solo apreciable en el pacífico momento del presente intemporal en que los sueños se derrumban y solo la realidad manifiesta sucede sin obstáculos ni forma aparente.
+        button.btn Continue Reading
+    article.card-article
+        aside
+            img.banner.img(src="https://cdn.magdeleine.co/wp-content/uploads/2019/09/a-cluster-of-bronzed-leaves-1400x933.jpg")
+        aside
+            h1 Autointeresados
             .main-content
-                p.description= article.content
-            button.btn() Continue Reading
-        article.card-article
-            aside
-                img.banner.img(src="https://cdn.magdeleine.co/wp-content/uploads/2019/09/a-cluster-of-bronzed-leaves-1400x933.jpg")
-                p
-                    time(datetime=article.hrfDate)= article.date
-            aside
-                h1= article.title
-                .main-content
-                    p.description= article.content
-                button.btn Continue Reading
-            button.btn(onclick="clicked(this)") Click to prove!
-            script.
-                function clicked(e){console.log(e)}
-        
-
+                p.main-text Puede alguien autointeresado en promocionar sus propios intereses hacerse cargo de lo que supone la responsabilidad? Atajas la responsabilidad como si de un ejercicio moral se tratase. Nada mas lejos de lo que realmente acontece cuando ejerces la responsabilidad de quien busca algo fuera de la cotidianidad, un amor no sujeto a valores sociales, arquetipos, ideologias y ni mucho menos paradigmas tocados por el pensamiento corriente. La tension en prueva de fuego para el verdadero yogui, alguien que deja y a la vez no deja que lo mundano sobrelleve su vida...
+            button.btn Continue Reading

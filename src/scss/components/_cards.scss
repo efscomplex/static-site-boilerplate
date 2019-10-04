@@ -1,28 +1,32 @@
 @mixin base-card(){
-    .description {
+    .main-text {
         text-align:justify; }
-    button {
+    .btn {
         margin-right:3rem;  }
 }
 
 @mixin card {   
-    .card{
         @include base-card; 
-        @content;   }
+        @content;
 }
 
 @mixin cardArticle(){
-    .card-article {
+    
         @include base-card;
         display:grid;
         grid-template-columns:1fr 1fr;
         grid-gap:2rem;
-        //aside:first-child{ margin-left:1rem;}
+        
         .main-content {
             max-height:1.6 * 4em;
             overflow-y: hidden;
-            margin-bottom:1em;
-        }
+            margin-bottom:1em;  }
+
         @content;
-    }
 }
+
+.card-article {
+    @include cardArticle;   }
+
+.card {
+    @include card;  }
