@@ -1,6 +1,7 @@
 # by @efscomplex
-> This is a template with structured directories using GulpJS
-> use live-server
+> This is a template with structured directories. 
+> It uses GulpJS , Sass, Pug template, Fontawesome...
+> using live-server...
 > Scripts:
 "server": "live-server dist/",
 "server:build": "live-server build/",
